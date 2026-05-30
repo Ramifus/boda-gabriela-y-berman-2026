@@ -68,7 +68,7 @@
                             <p
                                 class="font-crimson text-xl leading-snug nombres-padrinos"
                             >
-                                Mario Bartolomé<br />
+                                Mario Bartolome<br />
                                 Eduarda Salvatierra
                             </p>
                         </div>
@@ -90,7 +90,7 @@
                             <p
                                 class="font-crimson text-xl leading-snug nombres-padrinos"
                             >
-                                Leismis Alberto Araujo<br />
+                                Leimis Alberto Araujo<br />
                                 Judith Vaca Orihuela
                             </p>
                         </div>
@@ -142,14 +142,35 @@
                     0.25,
                 );
 
-            const sc = { trigger: "#card-padrinos", start: "top 80%", toggleActions: "play none none reset" };
-            gsap.fromTo("#flor-izq-padrinos",
+            const sc = {
+                trigger: "#card-padrinos",
+                start: "top 80%",
+                toggleActions: "play none none reset",
+            };
+            gsap.fromTo(
+                "#flor-izq-padrinos",
                 { opacity: 0, xPercent: -60 },
-                { opacity: 1, xPercent: -30, duration: 1.4, ease: "power2.out", delay: 0.4, scrollTrigger: sc }
+                {
+                    opacity: 1,
+                    xPercent: -30,
+                    duration: 1.4,
+                    ease: "power2.out",
+                    delay: 0.4,
+                    scrollTrigger: sc,
+                },
             );
-            gsap.fromTo("#flor-der-padrinos",
+            gsap.fromTo(
+                "#flor-der-padrinos",
                 { opacity: 0, xPercent: 60, rotation: 180 },
-                { opacity: 1, xPercent: 30, rotation: 180, duration: 1.4, ease: "power2.out", delay: 0.6, scrollTrigger: sc }
+                {
+                    opacity: 1,
+                    xPercent: 30,
+                    rotation: 180,
+                    duration: 1.4,
+                    ease: "power2.out",
+                    delay: 0.6,
+                    scrollTrigger: sc,
+                },
             );
         });
     }

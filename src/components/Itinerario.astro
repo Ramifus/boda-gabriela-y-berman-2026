@@ -46,7 +46,8 @@
                     <div class="absolute inset-0 bg-white/40"></div>
                     <div
                         class="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white/20 to-transparent"
-                    ></div>
+                    >
+                    </div>
 
                     <div class="relative px-6 pt-14 pb-10 z-10">
                         <!-- TÍTULO -->
@@ -81,7 +82,9 @@
                                 >
                                     Ceremonia Religiosa
                                 </h3>
-                                <p class="font-crimson text-lg font-semibold hora-evento">
+                                <p
+                                    class="font-crimson text-lg font-semibold hora-evento"
+                                >
                                     17:30 hrs.
                                 </p>
                             </div>
@@ -102,7 +105,9 @@
                                 >
                                     Recepción Social
                                 </h3>
-                                <p class="font-crimson text-lg font-semibold hora-evento">
+                                <p
+                                    class="font-crimson text-lg font-semibold hora-evento"
+                                >
                                     20:00 hrs.
                                 </p>
                             </div>
@@ -112,7 +117,7 @@
                         <div class="flex items-start gap-4 mb-5" id="evento-3">
                             <div class="w-12 flex-shrink-0 mt-1">
                                 <img
-                                    src="/imagenes/brindis.png"
+                                    src="/imagenes/baile.png"
                                     alt="Vals y Brindis"
                                     class="w-full h-auto object-contain icono-itinerario"
                                 />
@@ -123,7 +128,9 @@
                                 >
                                     Vals de los Novios
                                 </h3>
-                                <p class="font-crimson text-lg font-semibold hora-evento">
+                                <p
+                                    class="font-crimson text-lg font-semibold hora-evento"
+                                >
                                     20:30 hrs.
                                 </p>
                             </div>
@@ -144,7 +151,9 @@
                                 >
                                     Deliciosa Cena
                                 </h3>
-                                <p class="font-crimson text-lg font-semibold hora-evento">
+                                <p
+                                    class="font-crimson text-lg font-semibold hora-evento"
+                                >
                                     21:30 hrs.
                                 </p>
                             </div>
@@ -165,7 +174,9 @@
                                 >
                                     Fiesta
                                 </h3>
-                                <p class="font-crimson text-lg font-semibold hora-evento">
+                                <p
+                                    class="font-crimson text-lg font-semibold hora-evento"
+                                >
                                     22:00 hrs.
                                 </p>
                             </div>
@@ -175,7 +186,7 @@
                         <div class="flex items-start gap-4" id="evento-6">
                             <div class="w-12 flex-shrink-0 mt-1">
                                 <img
-                                    src="/imagenes/despedida.png"
+                                    src="/imagenes/torta.png"
                                     alt="Despedida"
                                     class="w-full h-auto object-contain icono-itinerario"
                                 />
@@ -186,11 +197,13 @@
                                 >
                                     Corte de Torta
                                 </h3>
-                                <p class="font-crimson text-lg font-semibold hora-evento">
+                                <p
+                                    class="font-crimson text-lg font-semibold hora-evento"
+                                >
                                     01:00 hrs.
                                 </p>
                             </div>
-                            </div>
+                        </div>
 
                         <!-- CIERRE -->
                         <div class="text-center mt-4">
@@ -334,17 +347,37 @@
                         },
                     },
                 );
-
             });
 
-            const sc = { trigger: "#card-itinerario", start: "top 80%", toggleActions: "play none none reset" };
-            gsap.fromTo("#flor-izq-itinerario",
+            const sc = {
+                trigger: "#card-itinerario",
+                start: "top 80%",
+                toggleActions: "play none none reset",
+            };
+            gsap.fromTo(
+                "#flor-izq-itinerario",
                 { opacity: 0, xPercent: -60 },
-                { opacity: 1, xPercent: -30, duration: 1.4, ease: "power2.out", delay: 0.4, scrollTrigger: sc }
+                {
+                    opacity: 1,
+                    xPercent: -30,
+                    duration: 1.4,
+                    ease: "power2.out",
+                    delay: 0.4,
+                    scrollTrigger: sc,
+                },
             );
-            gsap.fromTo("#flor-der-itinerario",
+            gsap.fromTo(
+                "#flor-der-itinerario",
                 { opacity: 0, xPercent: 60, rotation: 180 },
-                { opacity: 1, xPercent: 30, rotation: 180, duration: 1.4, ease: "power2.out", delay: 0.6, scrollTrigger: sc }
+                {
+                    opacity: 1,
+                    xPercent: 30,
+                    rotation: 180,
+                    duration: 1.4,
+                    ease: "power2.out",
+                    delay: 0.6,
+                    scrollTrigger: sc,
+                },
             );
         });
     }

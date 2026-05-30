@@ -41,7 +41,8 @@
                     <div class="absolute inset-0 bg-white/40"></div>
                     <div
                         class="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white/20 to-transparent"
-                    ></div>
+                    >
+                    </div>
 
                     <div
                         class="relative px-4 pt-14 pb-12 z-10 flex flex-col items-center"
@@ -64,7 +65,7 @@
                             </p>
                         </div>
 
-                        <div class="mb-4 bg-white p-3 rounded-lg" id="qr-code">
+                        <div class="mb-2 bg-white p-3 rounded-lg" id="qr-code">
                             <img
                                 src="/imagenes/qr.png"
                                 alt="QR Mesa de Regalos"
@@ -74,13 +75,23 @@
 
                         <div id="numero-cuenta" class="text-center mb-6">
                             <p
-                                class="font-cormorant text-lg font-semibold tracking-wide regalos-cuenta"
+                                class="font-crimson text-lg font-semibold regalos-cuenta"
                             >
-                                CTA: 3500466153
+                                Mendoza Rivero Gabriela
+                            </p>
+                            <p
+                                class="font-crimson text-lg font-semibold tracking-wide regalos-cuenta"
+                            >
+                                Cuenta 1311095796
+                            </p>
+                            <p
+                                class="font-great-vibes text-2xl mt-1 regalos-titulo"
+                            >
+                                Berman y Gabriela
                             </p>
                         </div>
 
-                        <div
+                        <!-- <div
                             id="lluvia-sobres"
                             class="text-center border-t border-[#c4a05a]/30 pt-6 mt-2 w-full px-4"
                         >
@@ -95,7 +106,7 @@
                                 También contaremos con un buzón para sobres el
                                 día del evento.
                             </p>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -202,13 +213,30 @@
                     },
                 );
 
-                gsap.fromTo("#flor-izq-regalos",
+                gsap.fromTo(
+                    "#flor-izq-regalos",
                     { opacity: 0, xPercent: -60 },
-                    { opacity: 1, xPercent: -30, duration: 1.4, ease: "power2.out", delay: 0.4, scrollTrigger: scrollConfig }
+                    {
+                        opacity: 1,
+                        xPercent: -30,
+                        duration: 1.4,
+                        ease: "power2.out",
+                        delay: 0.4,
+                        scrollTrigger: scrollConfig,
+                    },
                 );
-                gsap.fromTo("#flor-der-regalos",
+                gsap.fromTo(
+                    "#flor-der-regalos",
                     { opacity: 0, xPercent: 60, rotation: 180 },
-                    { opacity: 1, xPercent: 30, rotation: 180, duration: 1.4, ease: "power2.out", delay: 0.6, scrollTrigger: scrollConfig }
+                    {
+                        opacity: 1,
+                        xPercent: 30,
+                        rotation: 180,
+                        duration: 1.4,
+                        ease: "power2.out",
+                        delay: 0.6,
+                        scrollTrigger: scrollConfig,
+                    },
                 );
             });
         }

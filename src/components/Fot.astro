@@ -1,0 +1,56 @@
+<!-- ═══════════════════════════════════════════════════════════ --><!-- 🖼️  SECCIÓN: FOTO PRESENTACIÓN                             --><!-- ═══════════════════════════════════════════════════════════ -->
+<section class="relative w-full py-10 sm:py-14">
+    <div class="flex justify-center px-4">
+        <div id="foto-wrapper" class="relative inline-block">
+            <!-- MARCO DECORATIVO EXTERIOR -->
+            <div class="absolute inset-0 rounded-2xl border border-[#c4a05a]/30 pointer-events-none z-10"></div>
+
+            <!-- FOTO PRINCIPAL -->
+            <img
+                src="/imagenes/pres.png"
+                alt="Foto de los novios"
+                id="foto-pres"
+                class="block w-auto h-auto max-w-full rounded-2xl shadow-2xl"
+            />
+        </div>
+    </div>
+</section>
+
+<style>
+    #foto-wrapper {
+        box-shadow:
+            0 0 0 1px rgba(196, 160, 90, 0.15),
+            0 30px 60px rgba(0, 0, 0, 0.15),
+            0 10px 20px rgba(0, 0, 0, 0.08);
+        border-radius: 1rem;
+        opacity: 0;
+    }
+</style>
+
+<script>
+    import { gsap } from "gsap";
+    import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    if (typeof window !== "undefined") {
+        document.addEventListener("DOMContentLoaded", () => {
+            gsap.fromTo(
+                "#foto-wrapper",
+                { opacity: 0, y: 40, scale: 0.97 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    duration: 1.4,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: "#foto-wrapper",
+                        start: "top 85%",
+                        toggleActions: "play none none reset",
+                    },
+                },
+            );
+        });
+    }
+</script>

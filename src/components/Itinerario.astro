@@ -23,7 +23,6 @@
                     alt=""
                     id="flor-izq-itinerario"
                     class="absolute -top-7 left-0 w-36 pointer-events-none z-[25]"
-                    style="transform: translateX(-30%);"
                 />
 
                 <!-- FLOR — esquina inferior derecha -->
@@ -32,7 +31,6 @@
                     alt=""
                     id="flor-der-itinerario"
                     class="absolute -bottom-7 right-0 w-36 pointer-events-none z-[25]"
-                    style="transform: translateX(30%) rotate(180deg);"
                 />
 
                 <!-- CARD PRINCIPAL -->
@@ -248,6 +246,10 @@
         filter: brightness(0) saturate(100%) invert(35%) sepia(25%)
             saturate(500%) hue-rotate(85deg) brightness(90%) contrast(90%);
     }
+    #flor-izq-itinerario,
+    #flor-der-itinerario {
+        opacity: 0;
+    }
 </style>
 
 <script>
@@ -334,6 +336,16 @@
                 );
 
             });
+
+            const sc = { trigger: "#card-itinerario", start: "top 80%", toggleActions: "play none none reset" };
+            gsap.fromTo("#flor-izq-itinerario",
+                { opacity: 0, xPercent: -60 },
+                { opacity: 1, xPercent: -30, duration: 1.4, ease: "power2.out", delay: 0.4, scrollTrigger: sc }
+            );
+            gsap.fromTo("#flor-der-itinerario",
+                { opacity: 0, xPercent: 60, rotation: 180 },
+                { opacity: 1, xPercent: 30, rotation: 180, duration: 1.4, ease: "power2.out", delay: 0.6, scrollTrigger: sc }
+            );
         });
     }
 </script>

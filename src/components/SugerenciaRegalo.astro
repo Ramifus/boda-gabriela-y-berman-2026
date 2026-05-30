@@ -20,7 +20,6 @@
                     alt=""
                     id="flor-izq-regalos"
                     class="absolute -top-7 left-0 w-36 pointer-events-none z-[25]"
-                    style="transform: translateX(-30%);"
                 />
 
                 <img
@@ -28,7 +27,6 @@
                     alt=""
                     id="flor-der-regalos"
                     class="absolute -bottom-7 right-0 w-36 pointer-events-none z-[25]"
-                    style="transform: translateX(30%) rotate(180deg);"
                 />
 
                 <div
@@ -205,12 +203,12 @@
                 );
 
                 gsap.fromTo("#flor-izq-regalos",
-                    { opacity: 0, x: -60 },
-                    { opacity: 1, x: 0, duration: 1.2, ease: "power2.out", delay: 0.3, scrollTrigger: scrollConfig }
+                    { opacity: 0, xPercent: -60 },
+                    { opacity: 1, xPercent: -30, duration: 1.4, ease: "power2.out", delay: 0.4, scrollTrigger: scrollConfig }
                 );
                 gsap.fromTo("#flor-der-regalos",
-                    { opacity: 0, x: 60 },
-                    { opacity: 1, x: 0, duration: 1.2, ease: "power2.out", delay: 0.5, scrollTrigger: scrollConfig }
+                    { opacity: 0, xPercent: 60, rotation: 180 },
+                    { opacity: 1, xPercent: 30, rotation: 180, duration: 1.4, ease: "power2.out", delay: 0.6, scrollTrigger: scrollConfig }
                 );
             });
         }
@@ -218,6 +216,10 @@
 </section>
 
 <style>
+    #flor-izq-regalos,
+    #flor-der-regalos {
+        opacity: 0;
+    }
     .regalos-titulo {
         color: #c4a05a;
     }

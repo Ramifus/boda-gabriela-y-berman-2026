@@ -23,7 +23,6 @@
                     alt=""
                     id="flor-izq-restrict"
                     class="absolute -top-7 left-0 w-36 pointer-events-none z-[25]"
-                    style="transform: translateX(-30%);"
                 />
 
                 <!-- FLOR — esquina inferior derecha -->
@@ -32,7 +31,6 @@
                     alt=""
                     id="flor-der-restrict"
                     class="absolute -bottom-7 right-0 w-36 pointer-events-none z-[25]"
-                    style="transform: translateX(30%) rotate(180deg);"
                 />
 
                 <!-- CARD PRINCIPAL -->
@@ -48,7 +46,8 @@
                     <div class="absolute inset-0 bg-white/40"></div>
                     <div
                         class="absolute top-0 left-0 right-0 h-24 bg-gradient-to-b from-white/20 to-transparent"
-                    ></div>
+                    >
+                    </div>
 
                     <div
                         class="relative px-4 pt-14 pb-10 z-10 flex flex-col items-center"
@@ -66,12 +65,10 @@
                             <p
                                 class="font-crimson text-xl leading-relaxed acomp-texto"
                             >
-                                Aunque amamos a sus pequeños este día especial
-                                es solo para Adultos, le pedimos venga
-                                acompañado <br />
-                                <span class="font-bold acomp-acento"
-                                    >SIN NIÑOS.</span
-                                >
+                                Aunque queremos mucho a los más pequeños, en
+                                esta ocasión nuestra celebración estará
+                                destinada exclusivamente para adultos. <br />
+                                Agradecemos su comprensión y cariño.
                             </p>
                         </div>
                     </div>
@@ -157,13 +154,35 @@
                 },
             );
 
-            gsap.fromTo("#flor-izq-restrict",
-                { opacity: 0, x: -60 },
-                { opacity: 1, x: 0, duration: 1.2, ease: "power2.out", delay: 0.3, scrollTrigger: { trigger: "#card-acompanantes", start: "top 80%", toggleActions: "play none none reset" } }
+            const scF = {
+                trigger: "#card-acompanantes",
+                start: "top 80%",
+                toggleActions: "play none none reset",
+            };
+            gsap.fromTo(
+                "#flor-izq-restrict",
+                { opacity: 0, xPercent: -60 },
+                {
+                    opacity: 1,
+                    xPercent: -30,
+                    duration: 1.4,
+                    ease: "power2.out",
+                    delay: 0.4,
+                    scrollTrigger: scF,
+                },
             );
-            gsap.fromTo("#flor-der-restrict",
-                { opacity: 0, x: 60 },
-                { opacity: 1, x: 0, duration: 1.2, ease: "power2.out", delay: 0.5, scrollTrigger: { trigger: "#card-acompanantes", start: "top 80%", toggleActions: "play none none reset" } }
+            gsap.fromTo(
+                "#flor-der-restrict",
+                { opacity: 0, xPercent: 60, rotation: 180 },
+                {
+                    opacity: 1,
+                    xPercent: 30,
+                    rotation: 180,
+                    duration: 1.4,
+                    ease: "power2.out",
+                    delay: 0.6,
+                    scrollTrigger: scF,
+                },
             );
         });
     }
@@ -179,5 +198,9 @@
     .icono-restriccion {
         filter: brightness(0) saturate(100%) invert(35%) sepia(25%)
             saturate(500%) hue-rotate(85deg) brightness(90%) contrast(90%);
+    }
+    #flor-izq-restrict,
+    #flor-der-restrict {
+        opacity: 0;
     }
 </style>
